@@ -16,7 +16,7 @@ private fun solve(scanner: Scanner, out: PrintWriter) {
     val fours = lights.toList().map(Char::toString).batch(4)
     val badLightsCounts = mutableMapOf("B" to 0, "G" to 0, "R" to 0, "Y" to 0).withDefault { 0 }
     val goodLights = mutableListOf<List<String>>()
-    fours.dropLast(1).forEach {
+    fours.toList().dropLast(1).forEach {
         val sorted = it.sorted()
         val diff = listOf("B", "G", "R", "Y") - sorted
         diff.forEach {
@@ -36,14 +36,5 @@ private fun solve(scanner: Scanner, out: PrintWriter) {
         badLightsCounts[it] = badLightsCounts[it]!!.plus(1)
     }
     out.println("" + badLightsCounts["R"] + " " + badLightsCounts["B"] + " " + badLightsCounts["Y"] + " " + badLightsCounts["G"])
-
 }
 
-fun <T> List<T>.sliding(windowSize: Int): List<List<T>> {
-    return this.dropLast(windowSize - 1).mapIndexed { i, s -> this.subList(i, i + windowSize) }
-}
-
-fun <T> Iterable<T>.batch(chunkSize: Int) =
-        mapIndexed { i, item -> i to item }
-                .groupBy { it.first / chunkSize }
-                .map { it.value.map { it.second } }
