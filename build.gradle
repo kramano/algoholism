@@ -23,5 +23,6 @@ repositories {
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     compile "org.funktionale:funktionale-all:1.0.0-beta"
+    compile group: 'org.psjava', name: 'psjava', version: '0.1.19'
     testCompile group: 'io.kotlintest', name: 'kotlintest', version: '1.3.5'
 }

@@ -2,6 +2,10 @@ package fhc.first
 
 import java.io.File
 
+/**
+ * This is a wrong solution. It passed all the tests but there exists a test case that breaks it.
+ *
+ */
 class FightingZombies {
 
     val sampleInput = "/Users/mnovik/src/facebook hacker cup/resources/fighting_the_zombies_example_input.txt"
@@ -36,7 +40,7 @@ class FightingZombies {
         var right = 0
         for (left in 0..sortedByX.size - 1) {
             while (right < sortedByX.size && sortedByX[right].first <= sortedByX[left].first + testCase.squareSide) ++right
-            var column = sortedByX.subList(left, right).sortedBy { it.second }
+            val column = sortedByX.subList(left, right).sortedBy { it.second }
 
             var bottom = 0
             for (top in 0..column.size - 1) {
