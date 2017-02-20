@@ -1,0 +1,21 @@
+10 SumOf2Nums
+12 MULTI_NUMBER
+8 STANDARD
+9 input.txt
+8 STANDARD
+10 output.txt
+0
+24 src/main/java/max/rindon
+16 -Xmx256m -Xss64m
+4 Main
+21 max.rindon.SumOf2Nums
+39 net.egork.chelper.checkers.TokenChecker
+0 
+0
+10 2017.01.25
+4 Test
+1
+17 java.util.Scanner
+19 java.io.PrintWriter
+0
+0
