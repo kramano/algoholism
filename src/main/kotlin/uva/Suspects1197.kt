@@ -41,13 +41,13 @@ private fun solve(testCaseNumber: Int, scanner: Scanner, out: PrintWriter) {
         return
     }
     val dsu = DisjointSetForest<Int>()
+    (0..numStudents - 1).forEach { dsu.makeSet(it) }
     scanner.nextLine()
     val allStudents = mutableListOf<Int>()
     for (i in 1..numGroups) {
         val numStudentsInGroup = scanner.nextInt()
         val group = scanner.nextLine().trim().split(" ").map(String::toInt)
         allStudents.addAll(group)
-        group.forEach { dsu.makeSet(it) }
         group.forEach { dsu.union(group.first(), it) }
     }
     val suspectsCount = allStudents.count { dsu.connected(0, it)}
