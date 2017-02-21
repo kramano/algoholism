@@ -26,7 +26,6 @@ private fun solve(scanner : FastScanner, out: PrintWriter) {
         val result = stuarts.filter { it != max && it != min }.size
         out.println(result)
     }
-
 }
 
 private class FastScanner(`in`: InputStream) {
